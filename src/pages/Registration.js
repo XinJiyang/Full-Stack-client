@@ -16,7 +16,7 @@ function Registration() {
   });
 
   const onSubmit = data => {
-    axios.post("http://localhost:3001/auth", data).then(() => {
+    axios.post("https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/auth", data).then(() => {
       console.log(data);
     });
   };

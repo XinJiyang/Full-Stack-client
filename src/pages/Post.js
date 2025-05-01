@@ -14,18 +14,18 @@ function Post() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:3001/posts/byId/" + id + "/").then((response) => {
+    axios.get("https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/posts/byId/" + id + "/").then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get("http://localhost:3001/comments/" + id + "/").then((response) => {
+    axios.get("https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/comments/" + id + "/").then((response) => {
       setComments(response.data);
     });
   }, [id]);
 
   const addComment = () => {
     axios.post(
-      "http://localhost:3001/comments",
+      "https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/comments",
       {
         commentBody: newComment,
         PostId: id,
@@ -51,7 +51,7 @@ function Post() {
   };
 
   const deleteComment = (id) => {
-    axios.delete("http://localhost:3001/comments/" + id, {
+    axios.delete("https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/comments/" + id, {
       headers: { accessToken: localStorage.getItem("accessToken") },
     })
       .then(() => {
@@ -62,7 +62,7 @@ function Post() {
   };
 
   const deletePost = (id) => {
-    axios.delete("http://localhost:3001/posts/" + id, {
+    axios.delete("https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/posts/" + id, {
       headers: { accessToken: localStorage.getItem("accessToken") },
     })
       .then(() => {

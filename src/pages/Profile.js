@@ -10,11 +10,11 @@ function Profile() {
   const [listOfPosts, setListOfPosts] = useState([]);
   const { authState } = useContext(AuthContext);
   useEffect(() => {
-    axios.get('http://localhost:3001/auth/basicinfo/' + id).then((response) => {
+    axios.get('https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/auth/basicinfo/' + id).then((response) => {
       setUsername(response.data.username);
     });
 
-    axios.get('http://localhost:3001/posts/byUserId/' + id).then((response) => {
+    axios.get('https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/posts/byUserId/' + id).then((response) => {
       setListOfPosts(response.data);
     });
 

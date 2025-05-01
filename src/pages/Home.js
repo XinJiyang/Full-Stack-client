@@ -16,7 +16,7 @@ function Home() {
     if (!localStorage.getItem("accessToken")) {
       navigate("/login");
     } else {
-      axios.get("http://localhost:3001/posts", { headers: { accessToken: localStorage.getItem("accessToken") } }).then((response) => {
+      axios.get("https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/posts", { headers: { accessToken: localStorage.getItem("accessToken") } }).then((response) => {
         // console.log(response);
         setListOfPosts(response.data.listOfPosts || []);
         setLikedPosts(
@@ -30,7 +30,7 @@ function Home() {
 
   const LikeAPost = (postId) => {
     axios.post(
-      "http://localhost:3001/likes",
+      "https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/likes",
       { PostId: postId },
       { headers: { accessToken: localStorage.getItem("accessToken") } })
       .then((response) => {
