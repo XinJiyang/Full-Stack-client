@@ -13,7 +13,7 @@ function CreatePost() {
   };
 
   const onSubmit = data => {
-    axios.post("http://localhost:3001/posts", data, { headers: { accessToken: localStorage.getItem("accessToken") } }).then((response) => {
+    axios.post("https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/posts", data, { headers: { accessToken: localStorage.getItem("accessToken") } }).then((response) => {
       navigate('/');
     });
   };

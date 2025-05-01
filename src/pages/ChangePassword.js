@@ -5,7 +5,7 @@ function ChangePassword() {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const changePassword = () => {
-    axios.put('http://localhost:3001/auth/changepassword', {
+    axios.put('https://full-stack-nodejs-project-e0f82c08a823.herokuapp.com/auth/changepassword', {
       oldPassword: oldPassword,
       newPassword: newPassword,
     },
